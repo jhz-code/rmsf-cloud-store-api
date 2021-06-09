@@ -2,8 +2,8 @@
     "name": "rmtop/rmtop-could-store-api",
     "description": "store api",
     "require": {
-        "topthink/think-migration": "^3.0"
-
+        "topthink/think-migration": "^3.0",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "authors": [
         {
