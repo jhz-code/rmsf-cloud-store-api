@@ -5,6 +5,7 @@ namespace RmTop\StoreApi\core;
 
 
 use RmTop\StoreApi\model\StoreConfigModel;
+use think\console\command\Version;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\DbException;
 use think\db\exception\ModelNotFoundException;
@@ -16,26 +17,30 @@ class TopStoreConfig
 
     /**
      * 创建配置
-     * @param array $data
+     * @param string $apiUrl
+     * @param string $appKey
+     * @param string $version
      * @return StoreConfigModel|Model
      */
-    static  function addConfig(array $data): StoreConfigModel|Model
+    static  function addConfig(string $apiUrl,string $appKey,string $version): StoreConfigModel|Model
     {
         return StoreConfigModel::create([
-            'config_text' => serialize($data)
+            'config_text' => serialize(array('apiUrl'=>$apiUrl,'appKey'=>$appKey,'version'=>$version))
         ]);
     }
 
     /**
      * 更新配置
      * @param int $id
-     * @param array $data
+     * @param string $apiUrl
+     * @param string $appKey
+     * @param string $version
      * @return StoreConfigModel
      */
-    static function editConfig(int $id, array $data): StoreConfigModel
+    static function editConfig(int $id,string $apiUrl,string $appKey,string $version): StoreConfigModel
     {
         return StoreConfigModel::where(['id' => $id])->update([
-            'config_text' => serialize($data)
+            'config_text' => serialize(array('apiUrl'=>$apiUrl,'appKey'=>$appKey,'version'=>$version))
         ]);
     }
 

@@ -119,7 +119,7 @@ class TopClient
         if($config){
             $this->api = $config['apiUrl'];
             $this->appKey = $config['appKey'];
-            $this->version =  $config['appKey'];
+            $this->version =  $config['version'];
         }
     }
 

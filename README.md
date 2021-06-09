@@ -19,9 +19,9 @@
 ##### 配置项
 
 ```
-function addConfig(array $data) //创建配置
+addConfig(string $apiUrl,string $appKey,string $version)//创建配置
 
-editConfig(int $id, array $data)
+ editConfig(int $id,string $apiUrl,string $appKey,string $version) //更新配置
 
 deleteConfig(int $id)
 
