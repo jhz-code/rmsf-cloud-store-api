@@ -16,5 +16,12 @@
         "psr-4": {
             "RmTop\\StoreApi\\": "src/"
         }
+    },
+    "extra": {
+    "think": {
+        "services": [
+            "RmTop\\StoreApi\\RmStoreApiService"
+        ]
     }
+}
 }

@@ -34,6 +34,9 @@ class TopClient
     }
 
 
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     function Client(): \Psr\Http\Message\ResponseInterface
     {
         $client = new Client();
@@ -88,6 +91,14 @@ class TopClient
         $this->action = $action;
     }
 
+
+    /**
+     * 设置读取配置的ID
+     * @param int $configId
+     */
+    function setConfigId(int $configId){
+        $this->configId = $configId;
+    }
 
     /**
      * 设置参数
