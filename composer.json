@@ -1,0 +1,19 @@
+{
+    "name": "rmtop/rmtop-could-store-api",
+    "description": "store api",
+    "require": {
+        "topthink/think-migration": "^3.0"
+
+    },
+    "authors": [
+        {
+            "name": "rmsf-zjh",
+            "email": "hezuo@ynrmsf.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RmTop\\StoreApi\\": "src/"
+        }
+    }
+}
