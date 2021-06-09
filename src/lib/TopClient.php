@@ -14,6 +14,7 @@ class TopClient
     public string $api ;
     public string $version ;
     public string $appKey ;
+    public string $action ;
     protected array $params;
 
 
@@ -63,6 +64,15 @@ class TopClient
 
 
     /**
+     * @param string $action
+     * 设置
+     */
+    function setAction(string $action){
+        $this->action = $action;
+    }
+
+
+    /**
      * 设置参数
      * @param array $param
      */
@@ -82,6 +92,7 @@ class TopClient
             'api'=>$this->api,
             'version'=>$this->version,
             'appKey'=>$this->appKey,
+            'url' => $this->action
         ];
     }
 
