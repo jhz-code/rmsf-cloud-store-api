@@ -6,6 +6,10 @@ namespace RmTop\StoreApi\lib;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
+use RmTop\StoreApi\core\TopStoreConfig;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\DbException;
+use think\db\exception\ModelNotFoundException;
 
 class TopClient
 {
@@ -16,9 +20,22 @@ class TopClient
     public string $appKey ;
     public string $action ;
     protected array $params;
+    protected int $configId;
 
 
-    function Client(){
+    /**
+     * @throws ModelNotFoundException
+     * @throws DbException
+     * @throws DataNotFoundException
+     */
+    public function __construct()
+    {
+        $this->Config();
+    }
+
+
+    function Client(): \Psr\Http\Message\ResponseInterface
+    {
         $client = new Client();
         // Grab the client's handler instance.
         $clientHandler = $client->getConfig('handler');
@@ -81,10 +98,18 @@ class TopClient
     }
 
 
-
-
+    /**
+     * @throws ModelNotFoundException
+     * @throws DataNotFoundException
+     * @throws DbException
+     */
     function Config(){
-
+        $config = TopStoreConfig::getConfig($this->configId);
+        if($config){
+            $this->api = $config['apiUrl'];
+            $this->appKey = $config['appKey'];
+            $this->version =  $config['appKey'];
+        }
     }
 
 

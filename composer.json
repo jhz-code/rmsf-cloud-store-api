@@ -1,5 +1,5 @@
 {
-    "name": "rmtop/rmtop-cloud-store-api",
+    "name": "rmtop/rmsf-cloud-store-api",
     "description": "store api",
     "require": {
         "topthink/think-migration": "^3.0",
