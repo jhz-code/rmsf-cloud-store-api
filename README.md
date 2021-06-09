@@ -38,7 +38,7 @@ getConfig(int $id) //获取配置
 
 `参数解释:`
 `$configId 创建配置项ID` <br>
-`$action   执行方法  对应请求 地址URl`<br>
+`$action   执行方法  对应请求 地址URl 接口路由`<br>
 `$params   请求相关接口所需要的参数`<br>
 
 "参数样例："
