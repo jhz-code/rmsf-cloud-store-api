@@ -82,6 +82,15 @@ class TopClient
 
 
 
+
+    function Config(){
+
+    }
+
+
+
+
+
     /**
      * 获取配置项
      * @return array
