@@ -61,12 +61,11 @@ class TopStoreConfig
     /**
      * 输出配置
      * @param int $id
-     * @return mixed
      * @throws DataNotFoundException
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    static function getConfig(int $id): mixed
+    static function getConfig(int $id)
     {
         $result =  StoreConfigModel::where(['id' => $id])->find();
         return unserialize($result['config_text']);

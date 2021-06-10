@@ -5,6 +5,7 @@ namespace RmTop\StoreApi\lib;
 
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Middleware;
 use RmTop\StoreApi\core\TopStoreConfig;
 use think\db\exception\DataNotFoundException;
@@ -30,32 +31,35 @@ class TopClient
      */
     public function __construct()
     {
-        $this->Config();
+
     }
 
 
+
     /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
-    function Client(): \Psr\Http\Message\ResponseInterface
+    function Client()
     {
+        $this->Config();
         $client = new Client();
         // Grab the client's handler instance.
         $clientHandler = $client->getConfig('handler');
         // Create a middleware that echoes parts of the request.
         $tapMiddleware = Middleware::tap(function ($request) {
         });
-        $res = $client->request('POST', $this->api, [
+        $result = $client->request('POST', $this->api, [
             'http_errors' => false,
             'headers' => [ 'Accept' => 'application/json','User-Agent' => 'rmtop'],
             'handler' => $tapMiddleware($clientHandler),
             'json' => array_merge($this->getConfig(),['data'=>$this->params]),
         ]);
-        $res['StatusCode'] = $res->getStatusCode();
-        $res['ReasonPhrase'] = $res->getReasonPhrase();
-        $res['content'] =json_decode($res->getBody(),true);
+        $res['StatusCode'] = $result->getStatusCode();
+        $res['ReasonPhrase'] = $result->getReasonPhrase();
+        $res['content'] =json_decode($result->getBody(),true);
         return $res ;
     }
+
 
 
 
