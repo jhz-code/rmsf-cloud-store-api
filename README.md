@@ -48,6 +48,18 @@ orderNoStr:"订单编号,多个订单用','隔开，一次性最多10个,"
 apiCode:"助手编号"
 }
 url:"接口路由"
-}```
+}
+```
 
 
+
+#### 完整请求案例
+
+###### 店铺订单列表拉取
+
+
+`$result =  new TopClient();`<br>
+`$result->setConfigId(1);`<br>
+`$result->setAction('wbc/gcso');`<br>
+`$result->setParams(['sellerNick'=>"fdyxw11",'apiCode'=>'t4','ps'=>'20','pi'=>'1','startTime'=>"2021-05-31",'endTime'=>'2021-06-10','status'=>'']);`<br>
+`$result = $result->Client();`<br>

@@ -39,7 +39,7 @@ class TopClient
     /**
      * @throws GuzzleException
      */
-    function Client()
+    function Client(): array
     {
         $this->Config();
         $client = new Client();
