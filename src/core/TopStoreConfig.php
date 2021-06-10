@@ -17,6 +17,7 @@ class TopStoreConfig
 
     /**
      * 创建配置
+     *
      * @param string $apiUrl
      * @param string $appKey
      * @param string $version
