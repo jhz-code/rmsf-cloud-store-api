@@ -1,5 +1,6 @@
 <?php
 
+use Phinx\Db\Adapter\AdapterFactory;
 use think\migration\Migrator;
 use think\migration\db\Column;
 

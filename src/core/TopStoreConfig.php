@@ -22,7 +22,7 @@ class TopStoreConfig
      * @param string $version
      * @return StoreConfigModel|Model
      */
-    static  function addConfig(string $apiUrl,string $appKey,string $version): StoreConfigModel|Model
+    static  function addConfig(string $apiUrl,string $appKey,string $version)
     {
         return StoreConfigModel::create([
             'config_text' => serialize(array('apiUrl'=>$apiUrl,'appKey'=>$appKey,'version'=>$version))
