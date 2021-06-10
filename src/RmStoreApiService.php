@@ -27,7 +27,7 @@ class RmStoreApiService extends Service
      */
     public function boot()
     {
-        $this->commands(['rmtop:publish_pay' => PublishStoreFile::class,]);
+        $this->commands(['rmtop:publish_top_store' => PublishStoreFile::class,]);
     }
 
 
