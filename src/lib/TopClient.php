@@ -56,7 +56,7 @@ class TopClient
         ]);
         $res['StatusCode'] = $result->getStatusCode();
         $res['ReasonPhrase'] = $result->getReasonPhrase();
-        $res['content'] =json_decode($result->getBody(),true);
+        $res['Content'] =json_decode($result->getBody(),true);
         return $res ;
     }
 
