@@ -1,10 +1,9 @@
 <?php
 
-use Phinx\Db\Adapter\AdapterFactory;
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-class CloudPayConfig extends Migrator
+class CloudStoreApiConfig extends Migrator
 {
     /**
      * Initialize method.
